@@ -2,6 +2,15 @@
 <html ng-app>
 <head>
 	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		.media-list li:nth-child(2n+1) {
+			background-color: #ececf0;
+		}
+		.media-list li {
+			padding: 10px 10px 10px;
+			margin: 0;
+		}
+	</style>
 </head>
 <body>
 	<div class="container" ng-controller="AppCtrl">
@@ -11,6 +20,9 @@
 	    <ul class='media-list'>
 	        <li ng-repeat="item in items" class='media'>
 	          <h4 class='media-heading'>{{item.title}}</h4>
+	          <a href="{{item.url}}" class="btn btn-success btn-large pull-right" download="{{item.title}}.mp3" target="_blank">
+	          	<i class="icon-white icon-file"></i> Last ned
+	          </a>
 	          <div class='media'>
 	          	<audio controls>
 	          		<source src='{{item.url}}' type='audio/mpeg'/>
