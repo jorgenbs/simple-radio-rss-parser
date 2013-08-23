@@ -4,5 +4,10 @@ body {
   padding-top:70px;
 }
 
-
-  
+.media-list li:nth-child(2n+1) {
+	background-color: #ececf0;
+}
+.media-list li {
+	padding: 10px 10px 10px;
+	margin: 0;
+}
