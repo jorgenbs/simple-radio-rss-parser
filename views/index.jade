@@ -1,0 +1,24 @@
+!!!5
+html(ng-app)
+	head
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/app.css')
+	body 
+		div.container(ng-controller='AppCtrl')
+			h1 Radioresepsjonen
+			p Gidderikke bruke itunes
+
+			ul.media-list
+				li.media(ng-repeat='item in items')
+					h4.media-heading {{item.title}}
+					a.btn.btn-success.btn-large.pull-right(href='{{item.url}}', download='{{item.url}}', target='_blank')
+						i.icon-white.icon-file Last ned
+					div.media
+						audio(controls)
+							source(src='{{item.url}}', type='audio/mpeg')
+
+
+	script(src='/lib/angular/angular.js')
+	script(src='/js/controllers.js')
+	script(src='/lib/jquery/jquery.js')
+	script(src='/bootstrap/js/bootstrap.min.js')
